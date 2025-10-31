@@ -872,7 +872,7 @@ describe('workers/repository/process/lookup/index', () => {
           newVersion: '1.0.1',
           newVersionAgeInDays: expect.any(Number),
           releaseTimestamp: expect.any(String),
-          updateType: 'patch',
+          updateType: 'security',
         },
       ]);
     });
@@ -900,7 +900,7 @@ describe('workers/repository/process/lookup/index', () => {
           newVersion: '1.4.1',
           newVersionAgeInDays: expect.any(Number),
           releaseTimestamp: expect.any(String),
-          updateType: 'minor',
+          updateType: 'security',
         },
       ]);
     });
@@ -928,7 +928,7 @@ describe('workers/repository/process/lookup/index', () => {
           newVersion: '1.1.0',
           newVersionAgeInDays: expect.any(Number),
           releaseTimestamp: expect.any(String),
-          updateType: 'minor',
+          updateType: 'security',
         },
       ]);
     });
@@ -984,7 +984,7 @@ describe('workers/repository/process/lookup/index', () => {
           newVersion: '1.1.0',
           newVersionAgeInDays: expect.any(Number),
           releaseTimestamp: expect.any(String),
-          updateType: 'minor',
+          updateType: 'security',
         },
       ]);
     });
@@ -1013,7 +1013,7 @@ describe('workers/repository/process/lookup/index', () => {
           newVersion: '1.4.1',
           newVersionAgeInDays: expect.any(Number),
           releaseTimestamp: expect.any(String),
-          updateType: 'minor',
+          updateType: 'security',
         },
       ]);
     });
@@ -1041,7 +1041,7 @@ describe('workers/repository/process/lookup/index', () => {
           newVersion: '1.0.1',
           newVersionAgeInDays: expect.any(Number),
           releaseTimestamp: expect.any(String),
-          updateType: 'patch',
+          updateType: 'security',
         },
       ]);
     });
@@ -1431,11 +1431,11 @@ describe('workers/repository/process/lookup/index', () => {
           newValue: undefined,
           newVersion: '1.3.0',
           releaseTimestamp: '2015-04-26T16:42:11.311Z' as Timestamp,
-          updateType: 'minor',
+          updateType: 'security',
         },
       ]);
       expect(updates[0].newValue).toBeUndefined();
-      expect(updates[0].updateType).toBe('minor');
+      expect(updates[0].updateType).toBe('security');
     });
 
     it('widens minor ranged versions if configured', async () => {

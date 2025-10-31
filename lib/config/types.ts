@@ -380,7 +380,8 @@ export type UpdateType =
   | 'lockfileUpdate'
   | 'rollback'
   | 'bump'
-  | 'replacement';
+  | 'replacement'
+  | 'security';
 
 // These are the update types which can have configuration
 export const UpdateTypesOptions = [
@@ -393,6 +394,7 @@ export const UpdateTypesOptions = [
   'lockFileMaintenance',
   'rollback',
   'replacement',
+  'security',
 ] as const;
 
 export type UpdateTypeOptions = (typeof UpdateTypesOptions)[number];

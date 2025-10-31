@@ -82,6 +82,10 @@ export async function generateUpdate(
   update.updateType =
     update.updateType ??
     getUpdateType(config, versioningApi, currentVersion, newVersion);
+  // Override updateType to 'security' for vulnerability alerts
+  if (config.isVulnerabilityAlert) {
+    update.updateType = 'security';
+  }
   if (versioningApi.isBreaking) {
     // This versioning scheme has breaking awareness
     update.isBreaking = versioningApi.isBreaking(currentVersion, newVersion);
