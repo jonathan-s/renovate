@@ -45,6 +45,7 @@ export function massageConfig(config: RenovateConfig): RenovateConfig {
       'pin',
       'digest',
       'rollback',
+      'security',
     ];
     for (const rule of massagedConfig.packageRules) {
       newRules.push(rule);

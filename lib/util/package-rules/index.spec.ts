@@ -1234,4 +1234,34 @@ describe('util/package-rules/index', () => {
     expect(res.depName).toBe('node');
     expect(res.packageName).toBe('docker.io/library/node');
   });
+
+  it('matches security updateType', async () => {
+    const config: PackageRuleInputConfig = {
+      packageName: 'test-package',
+      updateType: 'security' as UpdateType,
+      packageRules: [
+        {
+          matchUpdateTypes: ['security'],
+          labels: ['security-update'],
+        },
+      ],
+    };
+    const res = await applyPackageRules(config);
+    expect(res.labels).toEqual(['security-update']);
+  });
+
+  it('does not match non-security updateTypes when matching security', async () => {
+    const config: PackageRuleInputConfig = {
+      packageName: 'test-package',
+      updateType: 'minor' as UpdateType,
+      packageRules: [
+        {
+          matchUpdateTypes: ['security'],
+          labels: ['security-update'],
+        },
+      ],
+    };
+    const res = await applyPackageRules(config);
+    expect(res.labels).toBeUndefined();
+  });
 });

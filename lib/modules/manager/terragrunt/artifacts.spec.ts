@@ -30,6 +30,7 @@ describe('modules/manager/terragrunt/artifacts', () => {
     'pinDigest',
     'lockfileUpdate',
     'bump',
+    'security',
   ];
 
   beforeEach(() => {
