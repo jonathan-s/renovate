@@ -1602,7 +1602,7 @@ const options: RenovateOptions[] = [
   {
     name: 'matchUpdateTypes',
     description:
-      'Update types to match against (`major`, `minor`, `pin`, `pinDigest`, etc). Valid only within `packageRules` object.',
+      'Update types to match against (`major`, `minor`, `pin`, `pinDigest`, `security`, etc). Valid only within `packageRules` object.',
     type: 'array',
     subType: 'string',
     allowedValues: [
@@ -1616,6 +1616,7 @@ const options: RenovateOptions[] = [
       'rollback',
       'bump',
       'replacement',
+      'security',
     ],
     allowString: true,
     stage: 'package',
